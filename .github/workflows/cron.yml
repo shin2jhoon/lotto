@@ -3,7 +3,7 @@ on:
   schedule:
     # 매일 오후 1시 28분에 구매하도록 설정.
     # https://elmah.io/tools/cron-parser/
-    - cron: '28 4 * * *'
+    - cron: '28 4 * * 1-5'
 jobs:
   run-actions:
     runs-on: ubuntu-latest
