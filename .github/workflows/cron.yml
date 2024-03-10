@@ -1,0 +1,16 @@
+name: Lotto purchase (cron)
+on:
+  schedule:
+    # 매일 오후 1시 28분에 구매하도록 설정.
+    # https://elmah.io/tools/cron-parser/
+    - cron: '28 4 * * *'
+jobs:
+  run-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: rich-automation/lotto-action@latest
+        with:
+          id: ${{ secrets.ID }}
+          pwd: ${{ secrets.PASSWORD }}
+          token: ${{ secrets.GITHUB_TOKEN }}
